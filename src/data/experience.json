@@ -14,7 +14,7 @@
                 "Ruby", "Kafka", "AWS", "PostgresSQL", "OpenSearch", "Datadog", "Elixir"
             ],
             "start_date": "13/06/2022",
-            "end_date": "Today",
+            "end_date": "10/12/2025",
             "urls": [
                 { "name": "GetApp", "href": "https://getapp.com" },
                 { "name": "Capterra", "href": "https://capterra.com" }

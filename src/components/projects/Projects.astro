@@ -1,12 +1,21 @@
 ---
 import Project from "./Project.astro";
 import {projects, description} from "../../data/projects.json"
+import { getPinnedProjects } from "../../utils/gh";
+
+const pinnedProjects = await getPinnedProjects();
 ---
 <div class="p-6 mt-4">
 <h5 class="text-4xl font-bold tracking-tight text-white">Side Projects</h5>
 <p class="mt-2 text-lg tracking-tight text-gray-400" set:html={description}></p>
 <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
+        {pinnedProjects.map(({name,description,url,languages})=> (
+                <Project
+                title={name}
+                description={description}
+                url={url}
+                technologies={languages.edges.map(edge => edge.node.name)}/>
+        ))}
         {projects.map(({title,description,url,technologies})=> (
                 <Project
                 title={title}
@@ -14,6 +23,5 @@ import {projects, description} from "../../data/projects.json"
                 url={url}
                 technologies={technologies}/>
         ))}
-    
 </div>
 </div>
