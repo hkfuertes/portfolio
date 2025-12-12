@@ -1,3 +1,5 @@
+#import "widgets.typ": study
+
 #let education-timeline(
   items: (
     (title: "Nebrija", subtitle: "Madrid · 2022", detail: "Teaching Master", studies: true),
@@ -8,64 +10,40 @@
   ),
   color: rgb("#2b3440"),
 ) = {
-  set text(font: "Helvetica Neue", fill: color)
+  set text(font: "Helvetica Neue", fill: white)
   let color = color.lighten(10%)
 
   box(
-    inset: (top: 1em, bottom: 1.5em, left: 0em, right: 0em),
-    stack(
-      spacing: 1em,
-      {
-        let n = items.len()
-
-        grid(
-          columns: n,
-          column-gutter: 0pt,
-
-          ..items
-            .enumerate()
-            .map(((i, _)) => {
-              align(horizon)[
-                #stack(
-                  rect(
-                    width: 100%,
-                    height: 1pt,
-                    fill: color.darken(20%),
-                  ),
-                  place(
-                    left + horizon,
-                    dy: -0.5pt,
-                    circle(
-                      radius: 5pt,
-                      fill: color,
-                      stroke: none,
-                    ),
-                  ),
-                )
-              ]
-            })
-        )
-      },
-      grid(
-        columns: items.len(),
-        column-gutter: 8pt,
-        ..items.map(it => {
-          let text-color = if it.studies == false {
-            color.lighten(30%)
-          } else {
-            color
-          }
-
-          align(left + top)[
-            #text(size: 11pt, weight: "bold", fill: text-color)[
-              #upper(it.title)
-            ]
-            #linebreak()
-            #text(size: 9pt, weight: "light", fill: text-color)[#it.subtitle]
-            #linebreak()
-            #text(size: 9pt, fill: text-color, weight: "bold", style: "italic")[#it.detail]
+    fill: color,
+    radius: 5%,
+    width: 100%,
+    pad(
+      8pt,
+      stack(
+        {
+          let text-size = 12pt
+          text(size: text-size, weight: "bold")[
+            #upper("Edu")
           ]
-        }),
+          h(-3pt)
+          text(size: text-size, weight: "light")[
+            #upper("cation")
+          ]
+        },
+        v(8pt),
+        place(
+          dy: 4pt,
+          rect(
+            width: 100%,
+            height: 1pt,
+            fill: white,
+          ),
+        ),
+        grid(
+          columns: items.len(),
+          column-gutter: 6pt,
+          ..items.map(it => study(it.title, it.subtitle, it.detail, circle-stroke-color: color)),
+        ),
       ),
     ),
   )

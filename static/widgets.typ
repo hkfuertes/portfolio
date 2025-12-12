@@ -8,40 +8,40 @@
   line-color: rgb("#5d4e37"),
   line-width: 3pt,
 ) = {
-    stack(
-      dir: btt,
+  stack(
+    dir: btt,
+    rect(
+      width: bg-width,
+      height: photo-height,
+      fill: bg-color,
+      radius: radious,
+      stroke: none,
+    ),
+    place(
+      right,
+      dx: -(fg-width - 1pt),
+      dy: 0pt,
       rect(
-        width: bg-width,
+        width: line-width,
         height: photo-height,
-        fill: bg-color,
-        radius: radious,
+        fill: line-color,
         stroke: none,
       ),
-      place(
-        right,
-        dx: -(fg-width - 1pt),
-        dy: 0pt,
-        rect(
-          width: line-width,
-          height: photo-height,
-          fill: line-color,
-          stroke: none,
-        ),
+    ),
+    place(
+      right + top,
+      dx: 0pt,
+      dy: 0pt,
+      box(
+        width: fg-width,
+        height: photo-height,
+        clip: true,
+        inset: 0pt,
+        radius: radious,
+        image(photo-path, width: 100%, height: 100%, fit: "cover"),
       ),
-      place(
-        right + top,
-        dx: 0pt,
-        dy: 0pt,
-        box(
-          width: fg-width,
-          height: photo-height,
-          clip: true,
-          inset: 0pt,
-          radius: radious,
-          image(photo-path, width: 100%, height: 100%, fit: "cover"),
-        ),
-      )
-    )
+    ),
+  )
 }
 
 #let experience(
@@ -52,7 +52,7 @@
   content: none,
   logo-width: 45pt,
   logo-height: 28pt,
-  title-color: rgb("#2c3e50")
+  title-color: rgb("#2c3e50"),
 ) = {
   grid(
     columns: (50pt, 1fr),
@@ -110,4 +110,23 @@
   for (i, snippet) in items.enumerate() {
     code-snippet(snippet.path, lang: snippet.lang)
   }
+}
+
+#let study(title, subtitle, detail,
+  circle-stroke-color: red
+) = {
+  align(left + top)[
+    #circle(
+      radius: 5pt,
+      fill: white,
+      stroke: 2pt + circle-stroke-color,
+    )
+    #text(size: 11pt, weight: "bold")[
+      #upper(title)
+    ]
+    #linebreak()
+    #text(size: 9pt, weight: "light")[#subtitle]
+    #linebreak()
+    #text(size: 9pt, weight: "bold", style: "italic")[#detail]
+  ]
 }

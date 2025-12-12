@@ -5,8 +5,9 @@
 #let color = rgb("#2c3e50")
 #let contrast-color = rgb("#3d2b13")
 
+#let margin-size = 0.5cm
 #set page(
-  margin: (x: 1cm, y: 1cm, bottom: 1cm, right: 1cm)
+  margin: (top: margin-size, left: margin-size, bottom: margin-size, right: margin-size),
 )
 #set text(font: "Helvetica Neue", size: 10pt, fill: color)
 #show raw: set text(
@@ -22,7 +23,7 @@
   email: "mjfuertes@gmail.com",
   github: "hkfuertes",
   phone: "+34 656 616 069",
-  bg-color: contrast-color
+  bg-color: contrast-color,
 )
 
 #v(1em)
@@ -32,5 +33,5 @@
 #v(1fr)
 
 #education-timeline(
-  color: contrast-color
+  color: contrast-color,
 )
