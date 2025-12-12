@@ -26,21 +26,23 @@
   bg-color: contrast-color,
 )
 
-#v(1em)
+#v(.2em)
 
 #experience-block()
 
 #v(1fr)
 
 #education-timeline(
-  color: contrast-color,
+  color: contrast-color.lighten(30%),
 )
 
-#align(center)[
-  #text(font: "Helvetica Neue", size: 7pt, fill: color)[
-    #upper("Leave this world a better place than you found it")
-  ]
-  #text(size: 7pt, fill: color, weight: "light", style: "italic")[
-    #upper("- Baden Powell")
+#pad(top: -6pt)[
+  #align(center)[
+    #text(size: 7pt, fill: color.transparentize(50%))[
+      #upper("Try and leave this world a little better than you found it")
+    ]
+    #text(size: 7pt, fill: color.transparentize(20%), weight: "light", style: "italic")[
+      #upper("- Baden-Powell")
+    ]
   ]
 ]

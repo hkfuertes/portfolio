@@ -9,6 +9,7 @@
     (title: "UPNA", subtitle: "Pamplona · 2011", detail: "Computer Science", studies: true),
   ),
   color: rgb("#2b3440"),
+  title-enabled: false,
 ) = {
   set text(font: "Helvetica Neue", fill: white)
   let color = color.lighten(10%)
@@ -20,7 +21,7 @@
     pad(
       8pt,
       stack(
-        {
+        if title-enabled == true {
           let text-size = 12pt
           text(size: text-size, weight: "bold")[
             #upper("Edu")
@@ -30,7 +31,7 @@
             #upper("cation")
           ]
         },
-        v(8pt),
+        if title-enabled == true { v(8pt) },
         place(
           dy: 4pt,
           rect(
