@@ -3,10 +3,10 @@
 #let education-timeline(
   items: (
     (title: "Nebrija", subtitle: "Madrid · 2022", detail: "Teaching Master", studies: true),
-    (title: "UPNA", subtitle: "Pamplona · 2019", detail: "Biomedical Engineering Master", studies: true),
-    (title: "UPNA", subtitle: "Pamplona · 2014", detail: "Computer Science Major", studies: true),
+    (title: "UPNA", subtitle: "Pamplona · 2019", detail: "Biomedical Master", studies: true),
+    (title: "UPNA", subtitle: "Pamplona · 2014", detail: "Computer Science", studies: true),
     (title: "Millersville", subtitle: "Lancaster · 2012", detail: "Year Abroad", studies: false),
-    (title: "UPNA", subtitle: "Pamplona · 2011", detail: "Computer Science Minor", studies: true),
+    (title: "UPNA", subtitle: "Pamplona · 2011", detail: "Computer Science", studies: true),
   ),
   color: rgb("#2b3440"),
 ) = {
@@ -40,8 +40,7 @@
           ),
         ),
         grid(
-          columns: items.len(),
-          column-gutter: 6pt,
+          columns: (1fr,) * items.len(),
           ..items.map(it => study(it.title, it.subtitle, it.detail, circle-stroke-color: color)),
         ),
       ),
