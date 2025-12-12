@@ -35,3 +35,12 @@
 #education-timeline(
   color: contrast-color,
 )
+
+#align(center)[
+  #text(font: "Helvetica Neue", size: 7pt, fill: color)[
+    #upper("Leave this world a better place than you found it")
+  ]
+  #text(size: 7pt, fill: color, weight: "light", style: "italic")[
+    #upper("- Baden Powell")
+  ]
+]
