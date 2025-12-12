@@ -1,5 +1,5 @@
-#import "snippets/microsoft.typ": microsoft-content
-#import "widgets.typ": code-snippet, code-snippets, experience
+#import "../snippets/microsoft.typ": microsoft-content
+#import "../widgets.typ": code-snippet, code-snippets, experience
 
 #let company-logos = (
   "Gartner": "logos/gartner.png",

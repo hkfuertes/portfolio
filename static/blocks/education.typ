@@ -1,4 +1,4 @@
-#import "widgets.typ": study
+#import "../widgets.typ": study
 
 #let education-timeline(
   items: (

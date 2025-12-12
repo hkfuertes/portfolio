@@ -1,6 +1,6 @@
-#import "header.typ": header-with-photo
-#import "experience.typ": experience-block
-#import "education.typ": education-timeline
+#import "blocks/header.typ": header-with-photo
+#import "blocks/experience.typ": experience-block
+#import "blocks/education.typ": education-timeline
 
 #let color = rgb("#2c3e50")
 #let contrast-color = rgb("#3d2b13")

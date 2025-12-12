@@ -1,4 +1,4 @@
-#import "widgets.typ": photo-element
+#import "../widgets.typ": photo-element
 
 #let header-with-photo(
   name: "Miguel Fuertes",
@@ -6,10 +6,10 @@
   email: "mjfuertes@gmail.com",
   github: "hkfuertes",
   phone: "+34 656 616 069",
-  photo-path: "7235263.jpg",
-  icon-mail: "icons/mail.svg",
-  icon-github: "icons/brand-github.svg",
-  icon-phone: "icons/phone.svg",
+  photo-path: "../7235263.jpg",
+  icon-mail: "../icons/mail.svg",
+  icon-github: "../icons/brand-github.svg",
+  icon-phone: "../icons/phone.svg",
   color: rgb("#2c3e50"),
   bg-color: rgb("#ecf0f1"),
   icon-size: 10pt,
