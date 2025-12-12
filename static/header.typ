@@ -11,6 +11,7 @@
   icon-github: "icons/brand-github.svg",
   icon-phone: "icons/phone.svg",
   color: rgb("#2c3e50"),
+  bg-color: rgb("#ecf0f1"),
   icon-size: 10pt,
   font-family: "Helvetica Neue",
 ) = {
@@ -25,8 +26,8 @@
           photo-height: 64pt,
           bg-width: 70pt,
           fg-width: 64pt,
-          bg-color: color,
-          line-color: color.darken(20%),
+          bg-color: bg-color,
+          line-color: bg-color.darken(20%),
           line-width: 2pt
         )
     ],
