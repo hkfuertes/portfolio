@@ -20,7 +20,7 @@
 #header-with-photo(
   name: "Miguel Fuertes",
   tagline: "Let's Talk!",
-  email: "mjfuertes@gmail.com",
+  email: "mjfuertesf@gmail.com",
   github: "hkfuertes",
   phone: "+34 656 616 069",
   bg-color: contrast-color,
